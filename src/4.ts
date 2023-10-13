@@ -26,6 +26,8 @@ abstract class House {
   protected door: boolean;
   protected tenants: Person[] = [];
 
+  constructor(key: Key) {}
+
   abstract openDoor(key: Key): void;
 
   comeIn(person: Person): void {
@@ -40,8 +42,7 @@ abstract class House {
 
 class MyHouse extends House {
   constructor(key: Key) {
-    super();
-    this.key = key;
+    super(key);
   }
 
   openDoor(key: Key): void {
